@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momos Junction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap'); /* Importing a new font for the header */
+        
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh; /* Ensure body takes full viewport height */
+            display: flex;
+            flex-direction: column; /* Stack header, content, and footer */
+            align-items: center;
+            justify-content: center;
+        }
+        .header, .footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            z-index: 1;
+        }
+        .header {
+            position: absolute;
+            top: 0px;
+            font-family: 'Roboto', Arial, sans-serif; /* Apply new font family */
+            font-weight: bold; /* Make the font bold */
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .welcome-msg {
+            text-align: center;
+            font-size: 36px;
+            color: black;
+            z-index: 1;
+            position: absolute; /* Absolute positioning for centering */
+            font-family: 'Roboto', Arial, sans-serif; /* Apply new font family */
+            font-weight: bold;
+            transition: opacity 2s ease-in-out, filter 2s ease-in-out; /* Smooth transition for blur and opacity */
+            filter: blur(0); /* Initially no blur */
+        }
+        .menu-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.5s ease-in-out; /* Smooth transition */
+            z-index: 1;
+        }
+        .menu-card img {
+            max-width: 100%;
+            max-height: 100vh;
+            object-fit: contain; /* Ensure image fits within viewport */
+            border-radius: 8px;
+        }
+        .red-text {
+            color: red;
+        }
+        .white-text {
+            color: white;
+        }
+        .red-heart {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1><span class="red-text">MOMOS</span> <span class="white-text">JUNCTION</span></h1>
+    </div>
+
+    <!-- Welcome Message -->
+    <div class="welcome-msg" id="welcomeMessage">
+        Welcome to <span class="red-text">MOMOS</span> JUNCTION!
+    </div>
+
+    <!-- Menu Card Image -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 menu-card" id="menuCard">
+                <img src="momos.jpeg" alt="Momos Menu Card">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 mR.AbhiS<span class="red-heart">&hearts;</span>. All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Display the image after the welcome message with blur effect
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.getElementById('welcomeMessage').style.filter = 'blur(10px)';
+                document.getElementById('welcomeMessage').style.opacity = 0;
+                document.getElementById('menuCard').style.opacity = 1;
+            }, 1000); // Adjust the delay as needed (3000ms = 3 seconds)
+        });
+    </script>
+</body>
+</html>
